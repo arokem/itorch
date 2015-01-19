@@ -1,0 +1,4 @@
+export DOCKER_HOST=tcp://$(boot2docker ip):2375
+export MY_DATA_DIR="$(PWD)/data"  # A data folder
+export IPYTHON_PASSWORD=MakeAPassword 
+alias itorch-docker="docker run -d -p 80:8888 -v $(PWD):/workspace/ -v $(PWD)/data:/workspace/data -e "PASSWORD=$IPYTHON_PASSWORD" arokem/itorch ; echo 'Now go to your browser: http://$(boot2docker ip). The password is $IPYTHON_PASSWORD' "
